@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Conversor de Temperatura</title>
+    </head>
+    <body>
+        <div class="container"> 
+            <h2>Conversor de Temperatura</h2>
+            <form>
+                <div class="box">
+                    <div class="left-box">
+                        <input type="text" id="left-input" name="left-input">
+                        <select name="left-temperature" id="left-temperature">
+                            <option value="C">C (Grau Celsius)</option>
+                            <option value="F">F (Grau Fahrenheit)</option>
+                            <option value="K">K (Kelvin)</option>
+                        </select>
+                    </div>
+                    <div class="middle-box">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <div class="right-box">
+                        <input type="text" id="right-input" name="right-input">
+                        <select name="right-temperature" id="right-temperature">
+                            <option value="C">C (Grau Celsius)</option>
+                            <option value="F">F (Grau Fahrenheit)</option>
+                            <option value="K">K (Kelvin)</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <button class="button">
+                        Converter
+                    </button>
+                </div>
+            </form>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
