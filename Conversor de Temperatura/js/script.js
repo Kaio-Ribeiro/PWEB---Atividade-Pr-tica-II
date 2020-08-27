@@ -33,35 +33,49 @@ conversorButton.addEventListener('click', function(e) {
     const leftTemp = document.getElementById('left-temperature').value
     const rightTemp = document.getElementById('right-temperature').value
 
-    numbersArray = splitedValues.map((value) => {
-        if (isNaN(value)) {
-            return value = 'Valor indefinido'
-        }
+    if (leftTemp === rightTemp) {
+        alert('Não pode conveter para a mesma temperatura!')
+    }
 
-        if (leftTemp === 'C') {
-            if (rightTemp === 'F') {
-                return celsiusToFahrenheit(value)
-            }else {
-                return celsiusToKelvin(value)
-            }
+    else if (leftTemp === 'C') {
+        if (rightTemp === 'F') {
+            functionConvert = celsiusToFahrenheit
+            symbol = '°F'
+        }else {
+            functionConvert = celsiusToKelvin
+            symbol = 'K'
         }
+    }
 
-        else if (leftTemp === 'F') {
-            if (rightTemp === 'C') {
-                return fahrenheitToCelsius(value)
-            }else {
-                return fahrenheitToKelvin(value)
-            }
+    else if (leftTemp === 'F') {
+        if (rightTemp === 'C') {
+            functionConvert = fahrenheitToCelsius
+            symbol = '°C'
+        }else {
+            functionConvert = fahrenheitToKelvin
+            symbol = 'K'
         }
+    }
 
-        else if (leftTemp === 'K') {
-            if (rightTemp === 'F') {
-                return kelvinToFahrenheit(value)
-            }else {
-                return kelvinToCelsius(value)
-            }
+    else if (leftTemp === 'K') {
+        if (rightTemp === 'F') {
+            functionConvert = kelvinToFahrenheit
+            symbol = '°F'
+        }else {
+            functionConvert = kelvinToCelsius
+            symbol = '°C'
         }
-    })
+    }
+
+   numbersArray = splitedValues.map((value) => {
+       if (isNaN(value)) {
+           return value = 'Valor indefinido'
+        }
+        else {
+            convertedNumber = functionConvert(value)
+            return ' '+convertedNumber+' '+symbol
+        }
+   })
 
     const rightInput = document.querySelector('#right-input')
     rightInput.value = numbersArray
